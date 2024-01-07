@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.technoverse.shalashobjectstorage.domain.ObjectData;
 import org.technoverse.shalashobjectstorage.service.ObjectStorageService;
+import org.technoverse.shalashobjectstorage.service.dto.ObjectDataResponse;
 import org.technoverse.shalashobjectstorage.util.ObjectUtils;
 
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class ObjectStorageController {
 
     @PostMapping
     public ResponseEntity<?> uploadImage(@RequestParam("object")MultipartFile file) throws IOException {
-        ObjectData objectData = objectStorageService.uploadImage(file);
+        ObjectDataResponse objectData = objectStorageService.uploadImage(file);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(objectData);
 

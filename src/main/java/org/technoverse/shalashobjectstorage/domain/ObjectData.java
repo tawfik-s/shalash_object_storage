@@ -24,7 +24,6 @@ public class ObjectData {
 
     @Lob
     @Column(length = 1000)
-    @JsonIgnore
     private byte[] ObjectData;
 
 }
